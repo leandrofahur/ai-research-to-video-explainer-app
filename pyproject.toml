@@ -1,3 +1,14 @@
+[project]
+name = "ai-research-to-video-explainer"
+version = "0.1.0"
+description = "AI-powered research paper to video explainer workspace"
+authors = [{name = "Leandro", email = "leandrofahud@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+
+# Workspace configuration - no dependencies here
+# Each service manages its own dependencies
+
 [tool.black]
 line-length = 88
 target-version = ['py310']

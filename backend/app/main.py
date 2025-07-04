@@ -16,11 +16,11 @@ app.mount("/metrics", make_asgi_app())
 REQUEST_COUNTER = Counter('http_requests_total', 'Total HTTP requests', ['method', 'endpoint'])
 REQUEST_LATENCY = Histogram('http_request_duration_seconds', 'HTTP request latency')
 
-@app.get("/")
-def read_root():    
+@app.get("/api/v1/")
+def root():
     return {"message": "Hello, World!"}
 
-@app.get("/health")
+@app.get("/api/v1/health")
 def health_check():
     """Health check endpoint for monitoring"""
     return {"status": "healthy", "service": "ai-explainer-backend"}

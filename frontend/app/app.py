@@ -1,1 +1,3 @@
-print("Sanity check frontend")
+from streamlit import title
+
+title("Hello World")

@@ -1,0 +1,33 @@
+services:
+  backend:
+    build: ./backend
+    container_name: explainer-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - ollama
+    command: fastapi dev app/main.py --host 0.0.0.0 --port 8000
+
+  frontend:
+    build: ./frontend
+    container_name: explainer-frontend    
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    command: streamlit run app/app.py --server.port 8501 --server.address 0.0.0.0
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  ollama_data:

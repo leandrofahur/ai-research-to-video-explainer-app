@@ -1,0 +1,24 @@
+# Backend
+fastapi[standard]
+python-multipart
+langchain
+ollama
+openai
+moviepy
+ffmpeg-python
+elevenlabs
+sqlalchemy
+python-dotenv
+
+# Frontend
+streamlit
+
+# Dev Tools
+black
+ruff
+
+# Logging
+loguru
+
+# Monitoring
+prometheus-client
